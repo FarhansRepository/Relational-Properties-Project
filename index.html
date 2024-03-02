@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relational Properties</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <link href="./styles.css" rel="stylesheet" type="text/CSS" />
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="withImage">Relational Properties</h1>
+        <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+            <label class="btn btn-outline-danger" for="vbtn-radio1">Learn The Concepts</label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+            <label class="btn btn-outline-danger" for="vbtn-radio2">Test Your Examples</label>
+        </div>
+        <div id="Learn">
+            <div>
+                <div class="semiTitle">Relations</div>
+                <p class="desc"> In Discrete Mathematics, a relation is a mathematical concept that defines a connection between elements of one or more sets. Formally, a relation R from set A to set B is a subset of the <span class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" onclick="searchDefinition('Cartesian product')">Cartesian product</span> A × B. In other words, a relation R consists of ordered pairs (a, b) where "a" is an element from set A, and "b" is an element from set B. </p>
+                <p class="example">For example, let's define a relation R from set A = {1, 2, 3} to set B = {4, 5, 6} where each element in set A is related to its square in set B: R={(1,1),(2,4),(3,9)} </p>
+                <p>In this relation, (1, 1) means that 1 is related to 1, (2, 4) means that 2 is related to 4, and (3, 9) means that 3 is related to 9.</p>
+            </div>
+            <div>
+                <div class="almostTitle">Properties of Relations </div>
+                <p class="desc">To understand the behavior and nature of relations in discrete mathematics, we ascribe the properties of reflexive, symmetric, and transitive to relations. It is the presence or absence of these properties that allow us to differentiate one relation from another. </p>
+            </div>
+            <div>
+                <div class="semiTitle">Reflexive</div>
+                <p class="desc">A reflexive relation is a relation on a set where every element is related to itself. Formally, a relation R on a set A is reflexive if, for every a in A, the pair (a,a) is in R. In other words, for every element a in the set, the pair (a,a) belongs to the relation. </p>
+                <p class="example">For example, let us consider Set A = {1,2,3} and a relation R = {(1,1), (2,2), (3,3)}. This relation is reflexive since for every element in A, A is related to itself. </p>
+                <p class="hidden" id="slideDownElement"> Here, it is to be noted that, in order for a relation to be reflexive, it is not necessary to only have (a,a) pairs. For example, we can have a relation Z = {(x,x), (x,y), (y,y)} and this is still reflexive since the elements x and y are related to themselves.
+                <p>
+            </div>
+            <div>
+                <div class="semiTitle">Symmetric</div>
+                <p class="desc"> A symmetric relation is a relation in which if the first element is connected to the second element, the second element is also related to the first element. Formally, a relation R on a set A is symmetric if, for every (a,b) pair in A, the pair (b,a) is also in A. In other words, to be symmetric, if the order of a pair were to be reversed, the reversed pair must be present. </p>
+                <p class="example">For example, let us consider a relation R = {(1,2), (2,1), (3,4), (4,3)}. This relation is symmetric since for every (x,y) pair, we can also find a (y,x) pair. </p>
+                <p class="hidden" id="slideDownElement2"> Here, it is to be noted that, if there were no (x,y) pairs, then the relation will be considered symmetric by default. For example, a relation R = {(1,1), (2,2), (3,3)} is to be considered symmetric as the elements are only connected to themselves and not to any other element.
+                <p>
+            </div>
+            <div>
+                <div class="semiTitle">Transitive</div>
+                <p class="desc"> a transitive relation is a type of relation on a set where if an element is related to another element and that second element is related to a third element, then the first element is also related to the third element. In other words, if (a,b) and (b,c) are in the relation, then (a,c) must also be in the relation. </p>
+                <p class="example">For example, let us consider a relation R = {(1,2), (2,3), (1,3), (2,2)}. This relation is transitive since there is a (1,2) and (2,3) pair, and there is also a (1,3) pair. The simplest way to assess if a relation is transitive or not is this: look at a pair (let's say, (x,y)) and see if the second element of the pair (in this case y) is the first element of another pair; so, check if there is (y,z) or (y,b) pairs and so on; if such pairs exist, then check if first element of the original pair(in this case x) is related to the second element of the other pair (in the form of (x,z) or (x,b) in this case). </p>
+                <p class="hidden" id="slideDownElement3">Here, it is to be noted that, if there were no (y,z) pairs or even (x,y) pairs, then the relation will be considered transitive by default. For example, a relation R = {(1,1), (2,2), (3,3), (6,7), (4,5)} is transitive since the second elements of the pairs are not the first elements of any other pair. </p>
+            </div>
+            <div>
+                <p class="almostTitle">Closure of Relations</p>
+                <p class="desc">The closure of a relation is an extension of the original relation that includes additional pairs to satisfy certain properties. Sometimes, it may be necessary to add pairs to a set to make it reflexive, symmetric, and/or transitive. </p>
+                <p class="semiTitle">Reflexive and Symmetric Closure</p>
+                <p class="desc">To perform reflexive closure, we simply add (a,a) pairs to the set for every element a in the domain that doesn't have (a,a) pair already. To perform symmetric closure, for every (x,y) pair, we simply add a (y,x) pair, if such pair is not present already.
+                <p>
+                <p class="semiTitle">Transitive Closure</p>
+                <p class="desc"> Performing transitive closures are significantly more difficult because as, for every (x,y) and (y,z), we add a (x,z) pair to the relation, we may find a new set with a (y,z) pair that was not present initially. Therefore, we will have to add a new (x,z), which could continue this trend on its now. Therefore, transitive closures can be very iterative.
+                <p class="example">For example, let us consider relation R = {(1,2), (2,3), (3,1)}. Here, we observe the pairs (2,3) and (3,1), and to make this transitive, we add the pair (2,1). But as we add (2,1), we realize that we now have (1,2) and (2,1), and to make this transitive, we will have to add (1,1) to the relation. This complexity increases exponentially as the number of ordered pairs in a set increases.
+                <p>
+            </div>
+            <div id="Practice">
+                <h1 id="wit">Ordered Pairs Properties</h1>
+                <label for="pair" class="label1">Enter ordered pairs to check properties(format: [x, y],[y, z]):</label>
+                <br />
+                <input type="text" id="pair" placeholder="e.g., [1,2],[2,3]">
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button onclick="calculateProperties()" class="btn btn-outline-success">Calculate Properties</button>
+                    <button onclick="clearInput('pair', 'output')" class="btn btn-outline-danger">Clear</button>
+                </div>
+                <div class="result" id="output"></div>
+                <label for="pairsInput" class="label1">Enter ordered pairs for closures(format: [x, y],[y, z]):</label>
+                <br />
+                <input type="text" id="pairsInput" placeholder="e.g., [1,2],[2,3]">
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button onclick="calculateClosures2()" class="btn btn-outline-success">Calculate Closures</button>
+                    <button onclick="clearInput('pairsInput', 'output2')" class="btn btn-outline-danger">Clear</button>
+                </div>
+                <div class="result" id="output2"></div>
+            </div>
+        </div>
+    </div>
+    <script src='./scripts.js'> </script>
+</body>
+
+
+</html>
