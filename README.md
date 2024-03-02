@@ -5,7 +5,7 @@
 ## About This Project
 * #### This project allows users to check the relational properties of a set of ordered pairs.
 
-* #### This project allows users to find ordered pairs to satisfy a relational property.
+* #### This project allows users to generate ordered pairs to satisfy a relational property.
 
 
 
